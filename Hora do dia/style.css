@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(173, 216 ,230);
+}
+
+header {
+    margin-top: 1vw;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    background: rgb(250, 248, 249);
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;   
+    margin: auto;
+    box-shadow: 3px 3px rgb(230, 136, 243);
+}
+
+.card {
+    width: 35rem;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 100px; 
+    position: relative;
+    box-shadow: rgba(102, 6, 81, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: whitesmoke;
+    text-align: center;
+    font-style: italic;
+}
+
+div{
+    color: rgb(0, 0, 0);
+    padding: 20px;
+}
+img{
+ 
+    width: 100%;
+    border-radius: 5%;
+}
+@media only screen and (max-width: 768px) {
+    
+    .card {
+        width: 20rem;
+    }
+  }
