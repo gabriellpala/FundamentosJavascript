@@ -1,0 +1,41 @@
+body {
+    pointer-events: auto !important;
+    background-size: 100% !important;
+    opacity: 0.90 !important;
+    background-position: 0 0 !important;
+    background-image: url(tec.gif);
+    content: '';
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    background-repeat: no-repeat;
+        font: normal 20pt Arial;
+    
+    
+    }
+    
+    header {
+        text-align: center;
+        text-justify: auto;
+        color: rgba(237, 238, 245, 0.877);
+    }
+    
+    section {
+        
+        background: #400ad4;
+        border-radius: 80px;
+        padding: 100px;
+        width: 500px;
+        margin: auto;
+        box-shadow: 5px 5px 10px rgba(14, 2, 66, 0.363);
+    }
+    select#flista{
+        width: 150px;
+    }
+    
+    
+    footer {
+        color: papayawhip;
+        text-align: center;
+        font-style: italic;
+    }
