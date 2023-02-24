@@ -1,0 +1,35 @@
+body {
+    font: normal 20pt italic;
+    background: url(cont.png);
+}
+
+header {
+    color: rgb(20, 17, 17);
+    text-align: center;
+
+}
+
+section {
+    background: rgb(0, 0, 255);
+    border-radius: 20px;
+    padding: 15px;
+    width: 250px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+h1 {
+    color: rgb(0, 0, 255);
+    
+}
+
+p{
+    color: rgb(249, 249, 255);
+}
+
+div {
+    color: rgb(252, 252, 252);
+    padding: 20px;
+}
