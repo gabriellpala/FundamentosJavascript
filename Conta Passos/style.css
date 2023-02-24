@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(240, 240, 240);
+    font: normal 15pt Times;
+    background: url(caminhada.gif);
+    
+}
+
+header{
+    color: rgb(0, 0, 0);
+    text-align: center;
+
+}
+
+section{
+    
+    background-color: #772f77;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0);
+    text-align: center;
+}
+
+footer{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-style: italic;
+    font: 8pt;
+    
+
+}
+
+h1{
+    color: rgb(0, 0, 0);
+}
+
+h2{
+    text-decoration: underline;
+}
+div{
+    color: rgb(0, 0, 0);
+    padding: 10px;
+}
