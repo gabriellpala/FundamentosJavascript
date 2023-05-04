@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Conversão Decimal para Binário e Hexadecimal</title>
+</head>
+
+<body>
+	<div class="converter">
+	<ul class="ul-conversao">
+		<li class="li-conversao">
+			<h2><a href="index2.html"> Binario pra Decimal e hexadecimal</a></h2>
+		</li>
+		<li class="li-conversao">
+			<h2><a href="index3.html"> Hexadecimal para Decimal e Binario</a></h2>
+		</li>
+	</ul>
+
+		<h1>Conversão Decimal para Binário e Hexadecimal</h1>
+	
+	<h4><label for="decimal-input">Insira o valor decimal abaixo</label></h4>
+	<input type="number" id="decimal-input" min="0">
+	<button onclick="converter()">Converter</button>
+	
+	<h4>Valor Binário: <span id="binary"></span></h4>
+	<h4>Valor Hexadecimal: <span id="hex"></span</h4>
+
+	<script src="dec.js"></script>
+
+	<script>
+		function converter() {
+			// Obtém o valor decimal informado pelo usuário
+			const decimal = parseInt(document.getElementById('decimal-input').value);
+
+			// Executa o código JavaScript para converter o valor decimal em binário e hexadecimal
+			let binary = '';
+			let hex = '';
+			let rem;
+
+			let temp = decimal;
+
+			while (temp !== 0) {
+				rem = temp % 2;
+				temp = Math.floor(temp / 2);
+				binary = rem + binary;
+			}
+
+			temp = decimal;
+
+			while (temp !== 0) {
+				rem = temp % 16;
+				temp = Math.floor(temp / 16);
+
+				if (rem < 10) {
+					hex = rem + hex;
+				} else {
+					hex = String.fromCharCode(rem + 55) + hex;
+				}
+			}
+
+			// Atribui o valor binário e hexadecimal nas tags span
+			document.getElementById('binary').innerHTML = binary;
+			document.getElementById('hex').innerHTML = hex;
+		}
+	</script>
+	</div>
+</body>
+
+</html>

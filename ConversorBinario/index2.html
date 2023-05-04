@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Conversão Binária para Decimal e Hexadecimal</title>
+</head>
+
+<body>
+    <div class="converter">
+    <ul>
+       <li class="li-conversao">
+         <h2><a href="index.html"> Decimal pra Binario e Hexadecimal</a></h2>
+        </li>
+    
+       <li class="li-conversao">
+        <h2><a href="index3.html"> Hexadecimal para Decimal e Binario</a></h2>
+    </li>
+</ul>
+    
+    <h1>Conversão Binária para Decimal e Hexadecimal</h1>
+
+    <h4><label for="binary-input">Insira o valor Binário abaixo</label></h4>
+    <input type="text" id="binary-input">
+    <button onclick="convertBinary()">Converter</button>
+
+    <h4>Valor Decimal: <span id="decimal"></span></h4>
+    <h4>Valor Hexadecimal: <span id="hex"></span></h4>
+
+    <script src="bin.js"></script>
+
+    <script>
+        function convertBinary() {
+            let binary = document.getElementById('binary-input').value; // obtém o valor binário inserido pelo usuário
+            let decimal = 0; // variável para armazenar o valor decimal
+            let hex = ''; // variável para armazenar o valor hexadecimal
+            let power = 0; // variável para armazenar a potência de 2
+
+            // converte o valor binário em decimal
+            for (let i = binary.length - 1; i >= 0; i--) {
+                // multiplica cada dígito binário pela potência de 2 correspondente
+                decimal += binary[i] * Math.pow(2, power);
+                power++;
+            }
+
+            // converte o valor decimal em hexadecimal
+            let temp = decimal; // armazena o valor decimal em uma variável temporária
+
+            while (temp !== 0) {
+                let rem = temp % 16; // obtém o resto da divisão por 16
+                temp = Math.floor(temp / 16); // divide o decimal por 16 e arredonda para baixo
+
+                // converte o valor do resto para um caractere hexadecimal e adiciona à esquerda do valor hexadecimal
+                if (rem < 10) {
+                    hex = rem + hex;
+                } else {
+                    hex = String.fromCharCode(rem + 55) + hex;
+                }
+            }
+
+            document.getElementById('decimal').innerHTML = decimal; // exibe o valor decimal na página
+            document.getElementById('hex').innerHTML = hex; // exibe o valor hexadecimal na página
+        }
+    </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Conversor Hexadecimal para Decimal e Binário</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <div class="converter">
+        <ul class="ul-conversao">
+            <li class="li-conversao">
+                <h2><a href="index2.html"> Binario para Decimal e hexadecimal</a></h2>
+            </li>
+            <li class="li-conversao">
+                <h2><a href="index.html"> Decimal pra binario e hexadecimal</a></h2>
+            </li>
+        </ul>
+        <h1>Conversor Hexadecimal para Decimal e Binário</h1>
+        <h4><label for="hexNumber">Digite um número hexadecimal:</label></h4>
+        <input type="text" id="hexNumber" name="hexNumber">
+        <button onclick="converter()">Converter</button>
+        <h4>Valor Binário: <span id="binaryNumber"></span></h4>
+        <h4>Valor Decimal: <span id="decimalNumber"></span< /h4>
+                <p id="resultado"></p>
+                <script>
+                    function converter() {
+    let hexNumber = document.getElementById("hexNumber").value;
+    let binaryNumber = "";
+    let decimalNumber = 0;
+    let power = 0;
+
+    // percorre o número hexadecimal da direita para a esquerda
+    for (let i = hexNumber.length - 1; i >= 0; i--) {
+        let hexDigit = hexNumber.charAt(i);
+        let decimalDigit = 0;
+
+        // converte o dígito hexadecimal em decimal
+        if (hexDigit >= '0' && hexDigit <= '9') {
+            decimalDigit = hexDigit.charCodeAt(0) - 48;
+        } else if (hexDigit >= 'A' && hexDigit <= 'F') {
+            decimalDigit = hexDigit.charCodeAt(0) - 65 + 10;
+        } else if (hexDigit >= 'a' && hexDigit <= 'f') {
+            decimalDigit = hexDigit.charCodeAt(0) - 97 + 10;
+        }
+
+        // atualiza o valor decimal
+        decimalNumber += decimalDigit * Math.pow(16, power);
+
+        // converte o dígito decimal em binário
+        let binaryDigit = "";
+        for (let j = 0; j < 4; j++) {
+            let bit = decimalDigit % 2;
+            binaryDigit = bit + binaryDigit;
+            decimalDigit = Math.floor(decimalDigit / 2);
+        }
+
+        // atualiza o valor binário
+        binaryNumber = binaryDigit + binaryNumber;
+
+        power++;
+    }
+
+    // exibe o resultado na página
+    document.getElementById('binaryNumber').innerHTML = binaryNumber;
+    document.getElementById('decimalNumber').innerHTML = decimalNumber;
+}
+                </script>
+    </div>
+</body>
+
+</html>
